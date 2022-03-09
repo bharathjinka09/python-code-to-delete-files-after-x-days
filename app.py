@@ -1,7 +1,7 @@
 import os, time, sys
 
 folder_path = "C:\Files_To_Read"
-file_ends_with = ".txt"
+file_ends_with = ".log"
 how_many_days_old_logs_to_remove = 7
 
 now = time.time()
@@ -13,4 +13,4 @@ for file in os.listdir(folder_path):
         #Delete files older than x days
         if os.stat(file_full_path).st_mtime < now - how_many_days_old_logs_to_remove * 86400: 
              os.remove(file_full_path)
-             print "\n File Removed : " , file_full_path
+             print("\n File Removed : " , file_full_path)
